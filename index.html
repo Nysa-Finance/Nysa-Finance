@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nysa | MaaS for your assets </title>
+    <title>Nysa | Open Curation for Credit Markets</title>
     <link rel="icon" type="image/png" href="assets/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -660,19 +660,20 @@ const dirAStyles = `
 .dirA .circle-stage {
   position: relative;
   width: 100%;
-  min-height: 500px;
+  min-height: 340px;
   z-index: 2;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 0px 40px 16px;
+  margin-top: 52px;
 }
 .dirA .how-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   width: 100%;
-  max-width: 960px;
+  max-width: 1120px;
   margin: 0;
   padding: 0;
 }
@@ -710,6 +711,30 @@ const dirAStyles = `
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
+}
+.dirA .how-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.dirA .how-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: rgba(255,255,255,0.62);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.dirA .how-card li::before {
+  content: '';
+  flex: none;
+  margin-top: 6px;
+  width: 5px; height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #EC008C, #FC6767);
 }
 
 @keyframes nysaRingSpin {
@@ -2200,6 +2225,43 @@ const dirAStyles = `
   .dirA .ml-chip.left { left: -8px; }
   .dirA .ml-chip.right { right: -8px; }
 }
+/* ─── Overrides: built-with strip, MaaS grid, team ─── */
+.dirA .backers{background:#000;border-color:rgba(255,255,255,.12)}
+.dirA .backers-label{background:#000;color:#fff;border-right-color:rgba(255,255,255,.12)}
+.dirA .backers-row .logo{color:#fff;opacity:.9}
+.dirA .sides-diagram{display:grid;grid-template-columns:1fr 210px 1fr;grid-template-areas:"a hub c" "b hub d";column-gap:64px;row-gap:24px;align-items:center;max-width:1120px;margin:0 auto}
+.dirA .sides-card{width:auto;position:relative}
+.dirA .sides-card.a{grid-area:a}.dirA .sides-card.b{grid-area:b}.dirA .sides-card.c{grid-area:c}.dirA .sides-card.d{grid-area:d}
+.dirA .sides-hub{grid-area:hub}
+.dirA .sides-card p{margin:10px 0 0;font-size:15px;line-height:1.6;color:var(--mute)}
+.dirA .team{background:#fff;padding:20px 0 120px}
+.dirA .team-head{text-align:center;margin-bottom:60px}
+.dirA .team-head .section-title{margin-left:auto;margin-right:auto}
+.dirA .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.dirA .team-col{padding:36px 32px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;background:var(--paper);display:flex;flex-direction:column;gap:14px}
+.dirA .team-col:nth-child(3n){border-right:0}
+.dirA .team-col:last-child{border-right:0}
+.dirA .team-avatar{position:relative;width:56px;height:56px;border-radius:50%;overflow:hidden;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font:500 20px 'Space Grotesk',sans-serif;flex:none}
+.dirA .team-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dirA .team-col h4{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:500;letter-spacing:-.02em;margin:0}
+.dirA .team-role{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--m1)}
+.dirA .team-col p{font-size:14px;line-height:1.55;color:var(--mute);margin:0}
+.dirA .team-links{display:flex;gap:10px;margin-top:auto;padding-top:6px}
+.dirA .team-links a{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink);transition:color .2s,border-color .2s}
+.dirA .team-links a:hover{color:var(--m1);border-color:var(--m1)}
+@media (max-width:1024px){
+  .dirA .sides-diagram{grid-template-columns:1fr 170px 1fr;column-gap:40px}
+  .dirA .team-grid{grid-template-columns:repeat(2,1fr)}
+  .dirA .team-col:nth-child(3n){border-right:1px solid var(--line)}
+  .dirA .team-col:nth-child(2n){border-right:0}
+}
+@media (max-width:860px){.dirA .how-cards{grid-template-columns:1fr}}
+@media (max-width:760px){
+  .dirA .sides-diagram{grid-template-columns:1fr;grid-template-areas:none;row-gap:16px}
+  .dirA .sides-card,.dirA .sides-hub{grid-area:auto}
+  .dirA .sides-hub{order:-1;margin:0 auto 8px}
+}
+@media (max-width:640px){.dirA .team{padding:0 0 80px}.dirA .team-grid{grid-template-columns:1fr}.dirA .team-col{border-right:0 !important}}
 
 `;
 
@@ -2218,10 +2280,11 @@ function DirectionA() {
             <span>nysa</span>
           </div>
           <div className="nav-links">
-            <a href="#how">How it works</a>
-            <a href="#smart-loans">Smart Loans</a>
+            <a href="#how">What is Nysa</a>
+            <a href="#market-as-a-service">Market-as-a-Service</a>
             <a href="#risk">Risk-Framework</a>
             <a href="#roadmap">Roadmap</a>
+            <a href="#team">Team</a>
             <a href="#contacts">Contact Us</a>
           </div>
           <button className={menuOpen ? "nav-hamburger open" : "nav-hamburger"} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
@@ -2230,10 +2293,11 @@ function DirectionA() {
         </div>
       </nav>
       <div className={menuOpen ? "dirA nav-mobile open" : "dirA nav-mobile"}>
-        <a href="#how" onClick={() => setMenuOpen(false)}>How it works</a>
-        <a href="#smart-loans" onClick={() => setMenuOpen(false)}>Smart Loans</a>
+        <a href="#how" onClick={() => setMenuOpen(false)}>What is Nysa</a>
+        <a href="#market-as-a-service" onClick={() => setMenuOpen(false)}>Market-as-a-Service</a>
         <a href="#risk" onClick={() => setMenuOpen(false)}>Risk-Framework</a>
         <a href="#roadmap" onClick={() => setMenuOpen(false)}>Roadmap</a>
+        <a href="#team" onClick={() => setMenuOpen(false)}>Team</a>
         <a href="#contacts" onClick={() => setMenuOpen(false)}>Contact Us</a>
       </div>
 
@@ -2241,8 +2305,8 @@ function DirectionA() {
       <section className="hero">
         <div className="inner">
           <h1>
-            Market-as-a-Service<br />
-            for <em>Tokenized Assets</em>.
+            <em>Open</em> Curation<br />
+            for Credit Markets.
           </h1>
           <div className="hero-ctas">
             <a href="#testnet" className="btn-grad" onClick={(e) => { e.preventDefault(); setShowPopup(true); setTimeout(() => setShowPopup(false), 2000); }}>
@@ -2264,15 +2328,16 @@ function DirectionA() {
 
       {/* Built or backed by — fixed label + scrolling logo marquee */}
       <div className="backers">
-        <div className="backers-label">Built or backed</div>
+        <div className="backers-label">Built with</div>
         <div className="backers-track">
           {[0, 1].map((dup) => (
             <div className="backers-row" key={dup} aria-hidden={dup === 1}>
-              <span className="logo"><img src="assets/ondo-finance.svg" alt="Ondo Finance" className="backer-img" /><span>Ondo Finance</span></span>
-              <span className="logo"><img src="assets/chainlink.svg" alt="Chainlink" className="backer-img" /><span>Chainlink</span></span>
-              <span className="logo"><img src="assets/bnb-logo.png" alt="BNB Chain" className="backer-img" /><span>BNB Chain</span></span>
-              <span className="logo"><img src="assets/euler-finance-eul-logo.png" alt="Euler Finance" className="backer-img" /><span>Euler Finance</span></span>
-              <span className="logo"><img src="assets/ethereum.svg" alt="Ethereum" className="backer-img" /><span>Ethereum</span></span>
+              <span className="logo"><img src="assets/kaminologo.png" alt="Kamino" className="backer-img" /><span>Kamino</span></span>
+              <span className="logo"><img src="assets/ondo-logo.png" alt="Ondo Finance" className="backer-img" /><span>Ondo Finance</span></span>
+              <span className="logo"><img src="assets/Phantom-Icon_Transparent_White.png" alt="Phantom" className="backer-img" /><span>Phantom</span></span>
+              <span className="logo"><img src="assets/pythlogo.png" alt="Pyth Network" className="backer-img" /><span>Pyth Network</span></span>
+              <span className="logo"><img src="assets/solanalogo.png" alt="Solana" className="backer-img" /><span>Solana</span></span>
+              <span className="logo"><img src="assets/hirundo-logo.png" alt="Hirundo Technologies" className="backer-img" /><span>Hirundo Technologies</span></span>
             </div>
           ))}
         </div>
@@ -2286,55 +2351,44 @@ function DirectionA() {
         </div>
 
         <div className="circle-head">
-          <div className="eyebrow">How Nysa works</div>
+          <div className="eyebrow">What is Nysa</div>
           <h2>
-            We build lending markets for your<br />
-            <em>tokenized</em> assets.
+            Credit Markets Curation.<br />
+            <em>Now</em> Open, Transparent, Community-Driven.
           </h2>
           <p className="circle-arch">
-            Nysa is a curator dedicated to supporting issuers across every aspect of building a lending market around their assets.
-            Through our Market-as-a-Service offering, you tokenize your assets on-chain
-            and we take care of the rest — in four steps:
+            Today's curators are closed boxes: depositors can't see where funds are allocated,
+            parameters change without notice, and losses land on lenders.
+            Web3 deserves an open standard for curation.
           </p>
         </div>
 
-        {/* 2x2 concept cards floating over the brain */}
         <div className="circle-stage">
         <div className="how-cards">
           <div className="how-card">
             <div className="num">01</div>
-            <h3>Due Diligence</h3>
+            <h3>Transparency By-Design</h3>
             <p>
-              We carefully analyse the underlying assets, their quality, and the risks attached to them —
-              and we make all of it crystal clear to lenders and borrowers.
-              Where assets are permissioned, we complete KYB.
+              Market parameter changes, timelocked and tracked live in the UI;
+              due diligence on every counterparty; independent quality rating for
+              every collateral; historical realized APY, shown; multiple community
+              channels for instant lender ↔ team communication.
             </p>
           </div>
           <div className="how-card">
             <div className="num">02</div>
-            <h3>Curation</h3>
+            <h3>DAO-Driven</h3>
             <p>
-              Through quantitative analysis, we define the risk parameters —
-              liquidation thresholds, LTVs, caps —
-              and the interest rate model for every loan asset.
+              New markets are proposed by DAO-approved curators and voted on by $NYSA holders.
+              Risk parameters stay governed by Nysa's quantitative framework — fully open-source.
             </p>
           </div>
           <div className="how-card">
             <div className="num">03</div>
-            <h3>Development</h3>
+            <h3>Lenders-First</h3>
             <p>
-              We deploy the vaults on robust third-party lending infrastructure — Euler, Morpho, Kamino or Blend —
-              connect the price feeds, deploy the liquidation bot,
-              and your isolated lending market is live.
-            </p>
-          </div>
-          <div className="how-card">
-            <div className="num">04</div>
-            <h3>Distribution</h3>
-            <p>
-              APY boosters, $NYSA farming, market listing on both the Nysa interface
-              and our lending providers' UIs, and
-              promotion to retail and institutional audiences.
+              Launch of SIN — Skin-In-the-Game. Nysa's revenues fund a vault that
+              covers lenders in case of bad debt on a Nysa-curated market.
             </p>
           </div>
         </div>
@@ -2344,55 +2398,6 @@ function DirectionA() {
       {/* ─── Two Sides — Lenders & Borrowers ─── */}
       <SidesSection />
 
-
-      {/* ─── Smart Loans ─── */}
-      <section className="section what" id="smart-loans">
-        <div className="what-bg">
-          <video className="b-brain" src="assets/brain-animation.mp4" autoPlay muted loop playsInline />
-        </div>
-        <div className="inner">
-        <div className="eyebrow">Smart Loans</div>
-        <h2 className="section-title">
-          Borrow with a <em>safety net</em>,<br />
-          modeled by Machine Learning.
-        </h2>
-        <p className="section-lead">
-          Users often struggle to configure safe borrow positions, especially
-          with volatile assets. To solve this, we built a Machine Learning
-          model that suggests the optimal borrow amount, maximizing
-          efficiency while minimizing liquidation risk.
-        </p>
-
-        <div className="what-grid">
-          <div className="what-card">
-            <div className="step-num">Step 01</div>
-            <h3>Initialize your borrow</h3>
-            <p>
-              Deposit collateral, choose the asset to borrow, and initialize
-              the borrow on our dApp straight away.
-            </p>
-          </div>
-          <div className="what-card">
-            <div className="step-num">Step 02</div>
-            <h3>Choose your time horizon</h3>
-            <p>
-              Estimate how long you plan to hold the borrowed asset — pick
-              from a quick option menu. This feeds the model's liquidation
-              probability estimate. Not sure? Just select <em>IDK</em>.
-            </p>
-          </div>
-          <div className="what-card">
-            <div className="step-num">Step 03</div>
-            <h3>Pick your risk profile</h3>
-            <p>
-              The model returns three borrow amounts — conservative,
-              moderate, aggressive. Choose the one that fits and execute the
-              transaction as you normally would.
-            </p>
-          </div>
-        </div>
-        </div>{/* end .inner */}
-      </section>
 
       {/* ─── Risk Framework ─── */}
       <section className="section risk" id="risk">
@@ -2470,58 +2475,56 @@ function DirectionA() {
         </div>
 
         <div className="roadmap-grid">
-          <div className="road-col r-now">
-            <span className="phase">Phase 01 · Q3–4 2026</span>
-            <span className="status now">● Live</span>
-            <h4>Testnet</h4>
-            <p>
-              Closed Testnet live, followed by a Public Testnet phase —
-              gathering community feedback, surfacing edge cases, and
-              stress-testing collateralization, borrowing, and liquidations.
-            </p>
-            <div className="bar"><i></i></div>
-          </div>
           <div className="road-col r-next">
-            <span className="phase">Phase 02 · Q4 2026</span>
+            <span className="phase">Phase 01 · Q4 2026</span>
             <span className="status next">Next</span>
             <h4>First <em>Market</em></h4>
             <p>
-              Mainnet deployment of our first market — featuring Ondo GM
-              tokenized stocks as collateral and more than 5 loan options,
-              live on BNB Chain.
+              Our first market goes live on Solana, built on Kamino's
+              lending infrastructure.
             </p>
             <div className="bar"><i></i></div>
           </div>
           <div className="road-col r-later">
-            <span className="phase">Phase 03 · Q1 2027</span>
+            <span className="phase">Phase 02 · Q4 2026–Q1 2027</span>
             <span className="status later">Later</span>
-            <h4>Smart <em>Loans</em></h4>
+            <h4>RWA Credit <em>Scaling</em></h4>
             <p>
-              The ML-powered Smart Loan Module ships — recommending
-              conservative, moderate, and aggressive borrow amounts that
-              maximize capital efficiency against liquidation risk.
+              Deployment of at least 2 new markets backed by RWA collateral.
+              At least 3 markets live, each with 40%+ utilization against
+              its supply cap.
             </p>
             <div className="bar"><i></i></div>
           </div>
           <div className="road-col r-later">
-            <span className="phase">Phase 04 · Q1 2027</span>
+            <span className="phase">Phase 03 · Q2 2027</span>
             <span className="status later">Later</span>
-            <h4>New <em>Markets</em></h4>
+            <h4>DAO <em>Launch</em></h4>
             <p>
-              Nysa deploys at least one additional lending market on an
-              EVM-compatible chain — expanding collateral coverage and
-              broadening issuer support.
+              TGE with a public INO, launch of the DAO for market
+              origination and curation, the staking module, and the
+              stNYSA credit market.
             </p>
             <div className="bar"><i></i></div>
           </div>
           <div className="road-col r-later">
-            <span className="phase">Phase 05 · Q3 2027</span>
+            <span className="phase">Phase 04 · Q3 2027</span>
             <span className="status later">Later</span>
-            <h4><em>Vaults</em></h4>
+            <h4>SIN <em>Vault</em></h4>
             <p>
-              Risk-curator-managed Vaults launch — rebalancing supplied
-              capital across markets for optimized risk-reward, giving
-              passive suppliers diversified exposure.
+              Launch of the Skin-In-the-Game vault, protecting lenders
+              against default on a Nysa-curated market.
+            </p>
+            <div className="bar"><i></i></div>
+          </div>
+          <div className="road-col r-later">
+            <span className="phase">Phase 05 · Q4 2027</span>
+            <span className="status later">Later</span>
+            <h4><em>Scaling</em></h4>
+            <p>
+              New services — Credit Market Vaults, Hyperliquid Vaults,
+              Pendle Markets Curation — alongside continued growth of
+              Nysa-curated credit markets.
             </p>
             <div className="bar"><i></i></div>
           </div>
@@ -2530,6 +2533,8 @@ function DirectionA() {
       </section>
 
       {/* ─── Contacts ─── */}
+      <TeamSection />
+
       <section className="community contacts" id="contacts">
         <div className="inner">
         <div className="eyebrow">Contacts</div>
@@ -2634,14 +2639,15 @@ function DirectionA() {
       <footer className="footer">
         <div className="f-brand">
           <img src="assets/logo.png" alt="" />
-          <p>Market-as-a-Service for your Tokenized Assets.</p>
+          <p>Open Curation for Credit Markets.</p>
         </div>
         <div className="footer-col">
           <h4>Protocol</h4>
-          <a href="#how">How it works</a>
-          <a href="#smart-loans">Smart Loans</a>
+          <a href="#how">What is Nysa</a>
+          <a href="#market-as-a-service">Market-as-a-Service</a>
           <a href="#risk">Risk Framework</a>
           <a href="#roadmap">Roadmap</a>
+            <a href="#team">Team</a>
           <a href="#contacts">Contact Us</a>
         </div>
         <div className="footer-col">
@@ -2717,37 +2723,30 @@ function SidesSection() {
   }, []);
 
   return (
-    <section ref={ref} className={inView ? 'sides-section in' : 'sides-section'} id="participants">
+    <section ref={ref} className={inView ? 'sides-section in' : 'sides-section'} id="market-as-a-service">
       <div className="inner">
         <div className="sides-head">
-          <div className="eyebrow">Lenders &amp; Borrowers</div>
+          <div className="eyebrow">Market-as-a-Service</div>
           <h2 className="section-title">
-            One protocol, <em>two</em> sides.
+            Curation for <em>tokenized</em> assets,<br />
+            end to end.
           </h2>
           <p>
-            Every asset inside a Nysa market is selected through two layers of
-            analysis. <b>Market research</b> identifies the assets with the
-            highest real demand; <em>quantitative</em> analysis delivers
-            risk-adjusted parameters — so both sides get a market that's
-            efficient by design.
+            We take care of the entire pipeline for building a credit market on your RWAs.
           </p>
         </div>
 
         <div className="sides-diagram">
-          {/* Lenders */}
-          <div className="sides-card lenders">
-            <div className="role"><span className="dot"></span>Lenders</div>
-            <h3>Earn <em style={{fontFamily:"'Instrument Serif', serif", fontStyle:'italic'}}>real</em> yield.</h3>
-            <ul>
-              <li>Higher APYs</li>
-              <li>Wider lend asset selection</li>
-              <li>Choose which market to lend in</li>
-            </ul>
+          <div className="sides-card a">
+            <div className="role"><span className="dot"></span>01</div>
+            <h3>Due Diligence</h3>
+            <p>Independent rating for every asset. In-depth due diligence on every counterparty. Onboarding for mint/redeem, where needed.</p>
           </div>
-
-          <div className="sides-connector left"><span className="wire"></span></div>
-
-          {/* Center hub — Nysa logo + animated ring */}
+          <div className="sides-card b">
+            <div className="role"><span className="dot"></span>02</div>
+            <h3>Liquidity</h3>
+            <p>DEX and credit market liquidity seed — enough depth for liquidations and immediate borrower access to loans. We run liquidations ourselves, to prevent bad debt.</p>
+          </div>
           <div className="sides-hub">
             <svg className="sides-ring" viewBox="0 0 210 210" fill="none">
               <defs>
@@ -2757,26 +2756,78 @@ function SidesSection() {
                   <stop offset="100%" stopColor="#FC6767" />
                 </linearGradient>
               </defs>
-              <circle cx="105" cy="105" r="90" stroke="url(#sides-grad)" strokeWidth="1.2"
-                strokeLinecap="round" className="ring-draw" opacity="0.55" />
-              <circle cx="105" cy="105" r="90" stroke="url(#sides-grad)" strokeWidth="2"
-                strokeLinecap="round" strokeDasharray="42 524" className="ring-arc" />
+              <circle cx="105" cy="105" r="90" stroke="url(#sides-grad)" strokeWidth="1.2" strokeLinecap="round" className="ring-draw" opacity="0.55" />
+              <circle cx="105" cy="105" r="90" stroke="url(#sides-grad)" strokeWidth="2" strokeLinecap="round" strokeDasharray="42 524" className="ring-arc" />
             </svg>
             <img src="assets/logo-mark.png" alt="Nysa" />
           </div>
-
-          <div className="sides-connector right"><span className="wire"></span></div>
-
-          {/* Borrowers */}
-          <div className="sides-card borrowers">
-            <div className="role"><span className="dot"></span>Borrowers</div>
-            <h3><em style={{fontFamily:"'Instrument Serif', serif", fontStyle:'italic'}}>Unlock</em> new liquidity.</h3>
-            <ul>
-              <li>Higher LTVs</li>
-              <li>Wider loan options</li>
-              <li>Wider collateral options</li>
-            </ul>
+          <div className="sides-card c">
+            <div className="role"><span className="dot"></span>03</div>
+            <h3>Curation</h3>
+            <p>Defining the best collateral and loan assets. Calculating risk parameters and optimized interest rate models.</p>
           </div>
+          <div className="sides-card d">
+            <div className="role"><span className="dot"></span>04</div>
+            <h3>Distribution</h3>
+            <p>APY boosters, $NYSA farming, and listings on the Nysa interface and our lending partners' front-ends, for retail and institutional lenders.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Team ────────────────────────────────────────────────────────────────
+const TEAM = [
+  { name: 'Gica', role: 'Risk Analyst', img: 'assets/team/gica.jpg',
+    bio: 'Graduated engineer and data analyst, 8+ years across software, ML and quantitative finance. Contributed to projects raising $500K+, judge at the 2025 Hedera Hackathon, speaker at the ICP Global Townhall. Leads Nysa\'s risk framework.',
+    links: { linkedin: 'https://www.linkedin.com/in/giacomo-maraglino-9a811b144/', github: 'https://github.com/giacomo-giacomo' } },
+  { name: 'Jordy', role: 'Fullstack Developer', img: 'assets/team/jordy.jpg',
+    bio: 'Full-stack Web3 developer with over 10 years of experience. Contributor to Code4Arena, Yala Labs and Reit Development. Brings a security-first focus to Nysa\'s development.',
+    links: { web: 'https://www.jordydekoning.com/', github: 'https://github.com/JordyKingz' } },
+  { name: 'Marco', role: 'Security Researcher', img: 'assets/team/marco.jpg',
+    bio: 'IT engineer and PhD in Cybersecurity, security researcher at Politecnico di Bari (CORSE). Strengthens Nysa\'s security posture and contract hardening.',
+    links: { linkedin: 'https://www.linkedin.com/in/marcomaraglino5', github: 'https://github.com/marcomaraglino' } },
+  { name: 'Sven', role: 'Lead Smart Contracts', img: 'assets/team/sven.jpg',
+    bio: 'Lead Solidity. 6 years at the intersection of blockchain, infrastructure and intelligent systems. Ex-AlphaPoint, contributed to El Salvador\'s national Bitcoin custody infrastructure. Owns Nysa\'s core smart contract development.',
+    links: { linkedin: 'https://www.linkedin.com/in/sven-d-10506271/', github: 'https://github.com/orgs/Nysa-Finance/people/0xDrChkn' } },
+  { name: 'BRAZENSKI', role: 'Community', img: 'assets/team/brazenski.jpg',
+    bio: 'CBDO. 7+ years in blockchain and digital assets — multi-chain DeFi infrastructure, institutional governance, treasury operations, ecosystem development. Senior Committee member at HSuite, Treasury Guardian at Silk Suite.',
+    links: { linkedin: 'https://www.linkedin.com/in/brazenski-hedera-b01785403/' } },
+];
+const TEAM_ICONS = {
+  linkedin: <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.59V21h-4V9.75Z" fill="currentColor" />,
+  github: <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.9.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor" />,
+  x: <path d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.3L4.8 21H1.6l7.5-8.6L1.2 3h6.5l4.5 5.7L17.5 3Z" fill="currentColor" />,
+  web: <g stroke="currentColor" strokeWidth="1.6" fill="none"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" /></g>,
+};
+function TeamSection() {
+  return (
+    <section className="team" id="team">
+      <div className="inner">
+        <div className="team-head">
+          <div className="eyebrow">Team</div>
+          <h2 className="section-title">The people behind <em>Nysa</em>.</h2>
+        </div>
+        <div className="team-grid">
+          {TEAM.map((m) => (
+            <div className="team-col" key={m.name}>
+              <div className="team-avatar">
+                <span>{m.name[0]}</span>
+                <img src={m.img} alt={m.name} onError={(e) => { e.target.style.display = 'none'; }} />
+              </div>
+              <h4>{m.name}</h4>
+              <span className="team-role">{m.role}</span>
+              <p>{m.bio}</p>
+              <div className="team-links">
+                {Object.keys(m.links).map((k) => (
+                  <a key={k} href={m.links[k]} target="_blank" rel="noreferrer" aria-label={k}>
+                    <svg width="16" height="16" viewBox="0 0 24 24">{TEAM_ICONS[k]}</svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
