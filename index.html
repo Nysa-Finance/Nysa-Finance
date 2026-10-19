@@ -2267,7 +2267,6 @@ const dirAStyles = `
 
 function DirectionA() {
   const [menuOpen, setMenuOpen] = React.useState(false);
-  const [showPopup, setShowPopup] = React.useState(false);
   return (
     <div className="dirA">
       <style dangerouslySetInnerHTML={{ __html: dirAStyles }} />
@@ -2309,10 +2308,12 @@ function DirectionA() {
             the <em>Tokenized</em> Economy
           </h1>
           <div className="hero-ctas">
-          <a href="https://app.nysa.finance" className="btn-grad" target="_blank" rel="noopener noreferrer">
-            Enter App
-            <svg ...>...</svg>
-          </a>
+            <a href="https://app.nysa.finance" className="btn-grad" target="_blank" rel="noopener noreferrer">
+              Enter App
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+            </a>
             <a href="https://nysa-finance.gitbook.io/nysa" className="btn-ghost">Read the docs</a>
           </div>
           <div className="hero-video">
