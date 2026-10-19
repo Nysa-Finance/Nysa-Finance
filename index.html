@@ -2257,9 +2257,12 @@ const dirAStyles = `
 }
 @media (max-width:860px){.dirA .how-cards{grid-template-columns:1fr}}
 @media (max-width:760px){
-  .dirA .sides-diagram{grid-template-columns:1fr;grid-template-areas:none;row-gap:16px}
-  .dirA .sides-card,.dirA .sides-hub{grid-area:auto}
-  .dirA .sides-hub{order:-1;margin:0 auto 8px}
+  /* Market-as-a-Service: one card per row, Nysa logo between card 02 and 03 */
+  .dirA .sides-diagram{grid-template-columns:1fr;grid-template-areas:none;row-gap:16px;max-width:460px;padding:0}
+  .dirA .sides-card.a,.dirA .sides-card.b,.dirA .sides-card.c,.dirA .sides-card.d,.dirA .sides-hub{grid-area:auto}
+  .dirA .sides-card{width:100%}
+  .dirA .sides-hub{order:0;justify-self:center;margin:4px 0;width:150px;height:150px}
+  .dirA .sides-hub img{width:64px;height:64px}
 }
 @media (max-width:640px){.dirA .team{padding:0 0 80px}.dirA .team-grid{grid-template-columns:1fr}.dirA .team-col{border-right:0 !important}}
 
