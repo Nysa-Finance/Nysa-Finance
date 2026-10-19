@@ -2,6 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- Anti-clickjacking: GitHub Pages can't send X-Frame-Options / CSP frame-ancestors (and browsers ignore
+         frame-ancestors in a <meta>), so the page stays hidden unless it is the top window. If another site
+         frames it, it tries to break out; if that's blocked (sandboxed iframe), it stays blank. -->
+    <style id="anti-clickjack">html { display: none !important; }</style>
+    <script>
+      if (window.self === window.top) {
+        document.getElementById('anti-clickjack').remove();
+      } else {
+        try { window.top.location = window.self.location.href; } catch (e) {}
+      }
+    </script>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Nysa | Open Curation for Credit Markets</title>
     <link rel="icon" type="image/png" href="assets/logo.png" />
